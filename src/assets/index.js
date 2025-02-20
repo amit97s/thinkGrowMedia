@@ -12,5 +12,6 @@ import wordpress from '../assets/wordpress.png'
 import coder from '../assets/coding.png'
 import ie from '../assets/ie.avif'
 import co from '../assets/co.jpg'
+import bleo from '../assets/bleo.webp'
 import diagolouis from '../assets/diagolouis.avif'
-export {tgmf,leatnlabf,bff,dc,dr,maacFinal,ie,galendaGlobalfinal,co,propHawk,wordpress,shopify,coder,tdc,diagolouis}
+export {tgmf,leatnlabf,bff,bleo,dc,dr,maacFinal,ie,galendaGlobalfinal,co,propHawk,wordpress,shopify,coder,tdc,diagolouis}

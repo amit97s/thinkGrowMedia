@@ -10,7 +10,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 import{tgmf,leatnlabf,maacFinal,galendaGlobalfinal,bff,propHawk,tdc,diagolouis,dc, dr, ie} from '../assets'
-// import tdc from '../assets/tdc.webp'
 import wt from '../assets/wt.svg'
 function Website() {
   const [visibleCards, setVisibleCards] = useState(6);
@@ -18,9 +17,7 @@ function Website() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [selectedTechnology, setSelectedTechnology] = useState("all");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   const allCards = [
-    // WordPress websites
     {
       id: 1,
       name: "MAAC CP",
@@ -95,7 +92,6 @@ function Website() {
       technology: "wordpress",
       link: "https://learnzlab.com/",
     },
-    // Shopify websites
     {
       id: 9,
       name: "diogolouis",
@@ -273,11 +269,10 @@ function Website() {
     return () => clearInterval(interval);
   }, [testimonials.length]);
   const handleRedirect = (url) => {
-    window.open(url, "_blank"); // Opens the link in a new tab
+    window.open(url, "_blank"); 
   };
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
           <div className="text-center">
@@ -300,7 +295,6 @@ function Website() {
         </div>
       </section>
 
-      {/* Features Section */}
       <section id="features" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -329,7 +323,6 @@ function Website() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="flex justify-center items-center gap-4 mb-16">
@@ -442,7 +435,6 @@ function Website() {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -482,7 +474,6 @@ function Website() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">

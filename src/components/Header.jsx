@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-
+import tgm from '../assets/tgmf.png'
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
@@ -31,7 +31,8 @@ function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-24 flex items-center justify-between">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-white">DigitalGrowth</h1>
+              {/* <h1 className="text-2xl font-bold text-white">DigitalGrowth</h1> */}
+              <img src={tgm} alt="" className='h-20'/>
             </div>
 
             <div className="hidden md:block">

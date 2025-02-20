@@ -10,6 +10,7 @@ import {
   ArrowRight,
   Send
 } from 'lucide-react';
+import tgm from '../assets/tgmf.png'
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,7 +21,9 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Company Info */}
         <div className="space-y-4">
-          <h3 className="text-2xl font-bold text-white">DigitalGrowth</h3>
+          {/* <h3 className="text-2xl font-bold text-white">DigitalGrowth</h3> */}
+                        <img src={tgm} alt="" className='h-20'/>
+          
           <p className="text-gray-400 leading-relaxed">
             Transforming businesses through innovative digital marketing solutions. Your success is our priority.
           </p>
@@ -119,7 +122,7 @@ function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © {currentYear} DigitalGrowth. All rights reserved.
+              © {currentYear} ThinkGrowMedia. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-gray-400">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

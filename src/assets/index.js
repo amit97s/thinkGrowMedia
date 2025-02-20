@@ -1,11 +1,12 @@
-import dl from '../assets/dl.avif';
-import tgm from '../assets/Layer_32.png';
-import learnLab from '../assets/learnLab.png';
-import maac from '../assets/maac.png'
-import g from '../assets/g.webp'
-import website1 from '../assets/website1.jpg'
-import maac2 from '../assets/maac2.jpeg'
-import backgroundPic from '../assets/background.avif'
-export{
-    dl,tgm,learnLab,maac,g,maac2,backgroundPic,website1
-}
+import tgmf from '../assets/tgmf.png'
+import leatnlabf from '../assets/learnlabf.png'
+import maacFinal from '../assets/maacFinal.jpeg'
+import galendaGlobalfinal from '../assets/galendaGlobalfinal.webp'
+import propHawk from '../assets/Prophawk_PB_Logo.png'
+import tdc from '../assets/tdc-logo.webp'
+import dc from '../assets/dc.png'
+import bff from '../assets/bff.svg'
+import dr from '../assets/dr.webp'
+import ie from '../assets/ie.avif'
+import diagolouis from '../assets/diagolouis.avif'
+export {tgmf,leatnlabf,bff,dc,dr,maacFinal,ie,galendaGlobalfinal,propHawk,tdc,diagolouis}

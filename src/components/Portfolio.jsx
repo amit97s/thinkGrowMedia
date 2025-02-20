@@ -1,17 +1,17 @@
 import React from "react";
-import { dl, g, learnLab, maac2, tgm } from "../assets";
+import { tgmf,leatnlabf,maacFinal,galendaGlobalfinal } from "../assets";
 
 const projects = [
-  { title: "MAAC CP", url: "https://maaccp.com/", image: maac2 },
-  { title: "Galena Global", url: "https://galenaglobal.com/", image: g },
-  { title: "Think Grow Media", url: "https://thinkgrowmedia.com/", image: tgm },
-  { title: "The Glimmer World", url: "https://www.theglimmerworld.com/", image: g },
-  { title: "MAAC GZB", url: "https://www.maacgzb.com/", image: maac2 },
-  { title: "MAAC Karol Bagh", url: "https://maackarolbagh.com/", image: maac2 },
-  { title: "LearnZ Lab", url: "https://learnzlab.in/", image: learnLab },
-  { title: "MAAC Paschim Vihar", url: "https://maacpaschimvihar.com/", image: maac2 },
-  { title: "LearnZ Lab (Alt)", url: "https://learnzlab.com/", image: learnLab },
-  { title: "Diogo Louis", url: "http://diogolouis.com/", image: dl }
+  { title: "MAAC CP", url: "https://maaccp.com/", image: maacFinal },
+  { title: "Galena Global", url: "https://galenaglobal.com/", image: galendaGlobalfinal},
+  { title: "Think Grow Media", url: "https://thinkgrowmedia.com/", image: tgmf },
+  { title: "The Glimmer World", url: "https://www.theglimmerworld.com/", image: galendaGlobalfinal },
+  { title: "MAAC GZB", url: "https://www.maacgzb.com/", image: maacFinal },
+  { title: "MAAC Karol Bagh", url: "https://maackarolbagh.com/", image: maacFinal },
+  { title: "LearnZ Lab", url: "https://learnzlab.in/", image: leatnlabf },
+  { title: "MAAC Paschim Vihar", url: "https://maacpaschimvihar.com/", image: maacFinal },
+  { title: "LearnZ Lab (Alt)", url: "https://learnzlab.com/", image: leatnlabf },
+  { title: "Diogo Louis", url: "http://diogolouis.com/", image: tgmf }
 ];
 
 function Portfolio() {

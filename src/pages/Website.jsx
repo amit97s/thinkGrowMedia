@@ -7,22 +7,39 @@ import {
   Laptop,
   Rocket,
   Star,
-  ChevronDown,
+  X,
 } from "lucide-react";
-import{tgmf,leatnlabf,maacFinal,galendaGlobalfinal,bff,propHawk,tdc,diagolouis,dc, dr, ie} from '../assets'
-import wt from '../assets/wt.svg'
+import {
+  tgmf,
+  leatnlabf,
+  maacFinal,
+  galendaGlobalfinal,
+  bff,
+  propHawk,
+  tdc,
+  co,
+  diagolouis,
+  dc,
+  dr,
+  ie,
+  wordpress,
+  shopify,
+  coder,
+} from "../assets";
+import wt from "../assets/wt.svg";
+
 function Website() {
-  const [visibleCards, setVisibleCards] = useState(6);
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [selectedTechnology, setSelectedTechnology] = useState("all");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedTechnology, setSelectedTechnology] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const allCards = [
     {
       id: 1,
       name: "MAAC CP",
       location: "Connaught Place",
-      image:maacFinal,
+      image: maacFinal,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://maaccp.com/",
@@ -31,7 +48,7 @@ function Website() {
       id: 2,
       name: "galena global",
       location: "India",
-      image:galendaGlobalfinal,
+      image: galendaGlobalfinal,
       category: "E-commerce",
       technology: "wordpress",
       link: "https://galenaglobal.com/",
@@ -40,7 +57,7 @@ function Website() {
       id: 3,
       name: "Think Grow Media",
       location: "Noida India",
-      image:tgmf,
+      image: tgmf,
       category: "Digital marketing",
       technology: "wordpress",
       link: "https://thinkgrowmedia.com/",
@@ -49,7 +66,7 @@ function Website() {
       id: 4,
       name: "MAAC Ghaziabad",
       location: "Connaught Place",
-      image:maacFinal,
+      image: maacFinal,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://www.maacgzb.com/",
@@ -58,7 +75,7 @@ function Website() {
       id: 5,
       name: "MAAC Karol Bagh",
       location: "Karol Bagh",
-      image:maacFinal,
+      image: maacFinal,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://www.maacgzb.com/",
@@ -67,17 +84,16 @@ function Website() {
       id: 6,
       name: "learnz Lab",
       location: "India",
-      image:
-      leatnlabf,
+      image: leatnlabf,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://learnzlab.in/",
     },
     {
       id: 7,
-      name: "maac ",
+      name: "maac",
       location: "paschim vihar,India",
-      image:maacFinal ,
+      image: maacFinal,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://maacpaschimvihar.com/",
@@ -86,8 +102,7 @@ function Website() {
       id: 8,
       name: "learnzlab",
       location: "India",
-      image:
-        leatnlabf,
+      image: leatnlabf,
       category: "Corporate Website",
       technology: "wordpress",
       link: "https://learnzlab.com/",
@@ -96,8 +111,7 @@ function Website() {
       id: 9,
       name: "diogolouis",
       location: "India",
-      image:
-        diagolouis,
+      image: diagolouis,
       category: "Fashion",
       technology: "shopify",
       link: "https://www.diogolouis.com/",
@@ -106,41 +120,37 @@ function Website() {
       id: 10,
       name: "BEF",
       location: "Kerala",
-      image:
-        bff,
+      image: bff,
       category: "Organic Store",
       technology: "code",
-      link:"https://bef.technopediasoft.com/"
+      link: "https://bef.technopediasoft.com/",
     },
     {
       id: 11,
       name: "Imperial Emporio",
       location: "Noida,India",
-      image:
-        ie,
+      image: ie,
       category: "Business",
       technology: "wordpress",
-      link:"https://imperialemporio.com/"
+      link: "https://imperialemporio.com/",
     },
     {
       id: 12,
       name: "Props Hawk",
       location: "Noida, India",
-      image:
-        propHawk,
+      image: propHawk,
       category: "Property",
       technology: "code",
-      link:"https://www.prophawk.com/"
+      link: "https://www.prophawk.com/",
     },
-   
     {
       id: 13,
       name: "Wafer Travel",
       location: "Gurgoan,India",
-      image:wt,
+      image: wt,
       category: "Travel",
       technology: "code",
-      link:"https://wafers.travel/"
+      link: "https://wafers.travel/",
     },
     {
       id: 14,
@@ -149,7 +159,7 @@ function Website() {
       image: dc,
       category: "Learning Platform",
       technology: "code",
-      link:"https://www.thedesignersclass.com/"
+      link: "https://www.thedesignersclass.com/",
     },
     {
       id: 15,
@@ -158,14 +168,9 @@ function Website() {
       image: dr,
       category: "Surgeon",
       technology: "code",
-      link:"https://drpreetiyadav.com/"
-    }
+      link: "https://drpreetiyadav.com/",
+    },
   ];
-
-  const filteredCards =
-    selectedTechnology === "all"
-      ? allCards
-      : allCards.filter((card) => card.technology === selectedTechnology);
 
   const features = [
     {
@@ -222,7 +227,7 @@ function Website() {
       rating: 5,
     },
     {
-      name: "Emily Rodriguez",
+      name: "Dhruv Binal",
       role: "Creative Director",
       content:
         "They transformed our vision into a beautiful, functional website. The whole process was smooth, and the results are amazing.",
@@ -230,16 +235,50 @@ function Website() {
     },
   ];
 
-  const handleToggle = () => {
-    setVisibleCards((prev) => (prev === 6 ? filteredCards.length : 6));
+  const technologies = [
+    {
+      id: "wordpress",
+      name: "WordPress",
+      description: "Custom WordPress websites built for success",
+      icon: <Globe className="w-12 h-12 text-white" />,
+      bgColor: "bg-[#3757E9]",
+      image: wordpress
+    },
+    {
+      id: "shopify",
+      name: "Shopify",
+      description: "E-commerce solutions that drive sales",
+      icon: <Building2 className="w-12 h-12 text-white" />,
+      bgColor: "bg-[#95BF47]",
+      image: shopify
+    },
+    {
+      id: "code",
+      name: "Custom Code",
+      description: "Bespoke web applications built from scratch",
+      icon: <Code2 className="w-12 h-12 text-white" />,
+      bgColor: "bg-slate-400",
+      image: co
+    },
+  ];
+
+  const filteredCards = selectedTechnology
+    ? allCards.filter((card) => card.technology === selectedTechnology)
+    : [];
+
+  const handleRedirect = (url) => {
+    window.open(url, "_blank");
   };
 
-  const technologies = [
-    { id: "all", name: "All Projects" },
-    { id: "wordpress", name: "WordPress" },
-    { id: "shopify", name: "Shopify" },
-    { id: "code", name: "Custom Code" },
-  ];
+  const openModal = (technology) => {
+    setSelectedTechnology(technology);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTechnology(null);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -268,11 +307,21 @@ function Website() {
 
     return () => clearInterval(interval);
   }, [testimonials.length]);
-  const handleRedirect = (url) => {
-    window.open(url, "_blank"); 
-  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
+
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
           <div className="text-center">
@@ -295,6 +344,7 @@ function Website() {
         </div>
       </section>
 
+      {/* Features Section */}
       <section id="features" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -323,118 +373,102 @@ function Website() {
         </div>
       </section>
 
+      {/* Projects Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <div className="flex justify-center items-center gap-4 mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Our Latest Projects
             </h2>
-            <div className="relative">
-              <button
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-2 bg-transparent py-2 rounded-lg transition-all duration-300"
-              >
-                <span className="text-green-600 font-bold text-3xl">
-                  {
-                    technologies.find((tech) => tech.id === selectedTechnology)
-                      ?.name
-                  }
-                </span>
-                <ChevronDown
-                  className={`w-5 h-5 transition-transform duration-300 ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {isDropdownOpen && (
-                <div className="absolute z-50 mt-2 w-48 rounded-lg bg-white shadow-lg py-2">
-                  {technologies.map((tech) => (
-                    <button
-                      key={tech.id}
-                      onClick={() => {
-                        setSelectedTechnology(tech.id);
-                        setIsDropdownOpen(false);
-                        setVisibleCards(6);
-                      }}
-                      className={`w-full px-4 py-2 text-left hover:bg-gray-100 transition-colors duration-200
-                        ${
-                          selectedTechnology === tech.id
-                            ? "text-green-600 font-medium"
-                            : "text-gray-700"
-                        }`}
-                    >
-                      {tech.name}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Explore our work across different technologies and platforms
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCards.slice(0, visibleCards).map((card) => (
-              <div
-                key={card.id}
-                className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {technologies.map((tech) => (
+              <button
+                key={tech.id}
+                onClick={() => openModal(tech.id)}
+                className="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={card.image}
-                    alt={card.name}
-                    className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <button 
-                     onClick={() => handleRedirect(card.link)}
-                    className="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      View Project
-                    </button>
+                <div className={`${tech.bgColor} p-8 text-white h-full`}>
+                    <div className="flex items-center justify-between mb-4">
+                      {/* {tech.icon} */}
+                      <img 
+                        src={tech.image} 
+                        alt={tech.name}
+                        className="h-12 w-auto object-contain" style={{mixBlendMode:'multiply'}}
+                      />
+                    </div>
+                  <h3 className="text-2xl font-bold mb-2">{tech.name}</h3>
+                  <p className="text-white/90">{tech.description}</p>
+                  <div className="mt-6 text-sm font-medium">
+                    Click to view projects →
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-purple-600 text-sm font-medium">
-                      {card.category}
-                    </span>
-                    <span
-                      className={`text-sm font-medium ${
-                        card.technology === "wordpress"
-                          ? "text-green-600"
-                          : card.technology === "shopify"
-                          ? "text-blue-600"
-                          : "text-orange-600"
-                      }`}
-                    >
-                      {card.technology === "wordpress"
-                        ? "WordPress"
-                        : card.technology === "shopify"
-                        ? "Shopify"
-                        : "Custom Code"}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {card.name}
-                  </h3>
-                  <p className="text-gray-600 mt-1">{card.location}</p>
-                </div>
-              </div>
+              </button>
             ))}
           </div>
-
-          {filteredCards.length > 6 && (
-            <div className="text-center mt-12">
-              <button
-                onClick={handleToggle}
-                className="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition-all duration-300 transform hover:scale-105"
-              >
-                {visibleCards === 6 ? "View More Projects" : "Show Less"}
-              </button>
-            </div>
-          )}
         </div>
       </section>
 
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl w-full max-w-7xl max-h-[90vh] overflow-hidden">
+            <div className="p-6 border-b border-gray-200 flex justify-between items-center">
+              <h3 className="text-2xl font-bold">
+                {technologies.find((t) => t.id === selectedTechnology)?.name}{" "}
+                Projects
+              </h3>
+              <button
+                onClick={closeModal}
+                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto max-h-[calc(90vh-80px)]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredCards.map((card) => (
+                  <div
+                    key={card.id}
+                    className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        src={card.image}
+                        alt={card.name}
+                        className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <button
+                          onClick={() => handleRedirect(card.link)}
+                          className="bg-white text-gray-900 px-6 py-2 rounded-full font-semibold transform -translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                        >
+                          View Project
+                        </button>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <span className="text-purple-600 text-sm font-medium">
+                        {card.category}
+                      </span>
+                      <h3 className="text-xl font-semibold text-gray-900 mt-2">
+                        {card.name}
+                      </h3>
+                      <p className="text-gray-600 mt-1">{card.location}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Team Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -474,6 +508,7 @@ function Website() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">

@@ -7,6 +7,10 @@ import tdc from '../assets/tdc-logo.webp'
 import dc from '../assets/dc.png'
 import bff from '../assets/bff.svg'
 import dr from '../assets/dr.webp'
+import shopify from '../assets/shopify.png'
+import wordpress from '../assets/wordpress.png'
+import coder from '../assets/coding.png'
 import ie from '../assets/ie.avif'
+import co from '../assets/co.jpg'
 import diagolouis from '../assets/diagolouis.avif'
-export {tgmf,leatnlabf,bff,dc,dr,maacFinal,ie,galendaGlobalfinal,propHawk,tdc,diagolouis}
+export {tgmf,leatnlabf,bff,dc,dr,maacFinal,ie,galendaGlobalfinal,co,propHawk,wordpress,shopify,coder,tdc,diagolouis}
